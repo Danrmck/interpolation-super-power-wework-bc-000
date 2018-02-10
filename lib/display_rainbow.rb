@@ -1,8 +1,17 @@
 # Write your #display_rainbow method here
 def display_rainbow(colors)
-end
+
+
 do
-  
+colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+
+allow(self).to receive(:puts)
+
+expect { display_rainbow(colors) }.to_not raise_error(NoMethodError)
+expect { display_rainbow(colors) }.to_not raise_error(ArgumentError)
+end
+
+do
 colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
   "R: red, O: orange, Y: yellow, G: green, B: blue, I: indigo, V: violet"
   expect(colors).to receive(:[]).with(0).at_least(:once).and_return("red")
